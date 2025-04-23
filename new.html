@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Your Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #051b3f;
+            color: #e7e29d;
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #d95102, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-bg {
+            background: #ee5f12; /* Changed to a more matching color */
+            backdrop-filter: blur(10px);
+        }
+
+        .fade-in {
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card, .project-card {
+            background: linear-gradient(to right, #1e293b, #0f172a);
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px rgba(0,0,0,0.4);
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover, .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px rgba(0,0,0,0.6);
+        }
+
+
+        .skill-pill {
+            background: #e203ee;
+            padding: 0.5rem 1rem;
+            margin: 0.5rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            color: #f1f5f9;
+        }
+
+        .contact-button {
+            background: #FF9F0F;
+            color: #fff;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .contact-button:hover {
+            background: #fb923c;
+        }
+
+        footer {
+            background: #1e293b;
+            text-align: center;
+            padding: 1.5rem;
+            color: #94a3b8;
+        }
+
+        /* Unique Skills Section Styling */
+        #skills {
+        padding: 5rem 2rem;
+    }
+
+        #skills h2 {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .skill-tag {
+            background-color: #374151; /* Darker background for the tags */
+            color: #f3f4f6; /* Light text color */
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        .skill-tag:hover {
+            background-color: #4b5563; /* Slightly lighter on hover */
+            transform: scale(1.05);
+        }
+
+        /* Responsive adjustments for the tag layout */
+        .flex-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .gap-3 {
+            gap: 0.75rem; /* Tailwind class for gap */
+        }
+
+        .md\:gap-4 {
+            gap: 1rem; /* Tailwind class for medium screens and up */
+        }
+        
+
+        /* Adjust grid for smaller screens */
+        
+
+
+        .experience-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #1e293b;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .experience-card h3 {
+            font-size: 1.5rem;
+            color: #4F97B3;
+        }
+
+        .experience-card p {
+            color: #e7e29d;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px rgba(0,0,0,0.6);
+        }
+
+    </style>
+</head>
+<body class="fade-in">
+
+    <nav class="nav-bg fixed w-full top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center text-white">
+            <span class="text-xl font-bold text-cyan-400">Portfolio</span>
+            <ul class="flex gap-6 text-sm md:text-base font-medium">
+                <li><a href="#about" class="hover:text-green-300">About</a></li>
+                <li><a href="#projects" class="hover:text-green-300">Projects</a></li>
+                <li><a href="#skills" class="hover:text-green-300">Skills</a></li>
+                <li><a href="#contact" class="hover:text-green-300">Contact</a></li>
+            </ul>
+            <div class="flex gap-4 text-sm md:text-base font-medium text-white">
+                <a href="https://www.linkedin.com/in/aadityajoshi24" target="_blank" class="hover:text-green-300">LinkedIn</a>
+                <a href="https://github.com/adityajoshi2485" target="_blank" class="hover:text-green-300">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-32 text-center px-4">
+        <img src="profile.jpg" alt="Your Photo" class="mx-auto w-40 h-40 rounded-full shadow-lg border-4 border-cyan-400 mb-4 hover:scale-105 transition" />
+        <h1 class="text-5xl font-extrabold gradient-text mb-4">Hey, I'm <span class="text-orange-400">Aditya</span></h1>
+        <p class="text-xl text-slate-300 max-w-2xl mx-auto">Electronics and Communications Engineering Student | Embedded Systems | IoT | Discovering VLSI Technologies </p>
+    </header>
+
+    <section id="about" class="py-20 px-6">
+        <h2 class="text-4xl font-semibold text-white mb-8 text-center">About Me</h2>
+        <div class="card max-w-3xl mx-auto text-slate-300 leading-relaxed">
+            I’m a second-year Electronics & Communication student exploring the electrifying world of Embedded Systems, VLSI, and AI. Currently mixing code with circuits and dreaming up gadgets that solve real-world problems.
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 px-6">
+        <h2 class="text-4xl font-semibold text-white mb-8 text-center">Projects</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="project-card">
+                <h3 class="text-2xl text-cyan-300 font-bold mb-2">Smart Home Automation system</h3>
+                <p class="text-slate-300 mb-4">Automation System that controls home appliances using mobile and IoT.</p>
+                <a href="#" class="text-green-400 font-semibold hover:underline">Explore →</a>
+            </div>
+            <div class="project-card">
+                <h3 class="text-2xl text-cyan-300 font-bold mb-2">RFID based Door Lock</h3>
+                <p class="text-slate-300 mb-4">A modern door lock which locks and unlocks using the Radio Frequency Identification wirelessly.</p>
+                <a href="#" class="text-green-400 font-semibold hover:underline">Explore →</a>
+            </div>
+            <div class="project-card">
+                <h3 class="text-2xl text-cyan-300 font-bold mb-2">Content - based Movie Recommendation System using ML</h3>
+                <p class="text-slate-300 mb-4">ML based Movie Recommendation System that recommends the movies based on Cast, Director, Genres and Description of other watched movies.</p>
+                <a href="#" class="text-green-400 font-semibold hover:underline">Explore →</a>
+            </div>
+            <div class="project-card">
+                <h3 class="text-2xl text-cyan-300 font-bold mb-2">Diabetes Prediction System using Machine Learning</h3>
+                <p class="text-slate-300 mb-4">A system that predicts whether the person has the diabetes or not by taking health data from the user.</p>
+                <a href="#" class="text-green-400 font-semibold hover:underline">Explore →</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-20 px-6 text-center">
+        <h2 class="text-4xl font-semibold text-white mb-8">Experience</h2>
+        <div class="flex justify-center">
+            <div class="experience-card max-w-md mx-auto">
+                <h3>Space Technology Research Group (STeRG)</h3>
+                <p>Worked on establishing the communication link between the devices for CANSAT competition.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 px-6">
+      <h2 class="text-4xl font-semibold text-white mb-8 text-center">Skills</h2>
+      <div class="max-w-3xl mx-auto">
+          <div class="flex flex-wrap justify-center gap-3 md:gap-4">
+              <span class="skill-tag">Embedded Programming</span>
+              <span class="skill-tag">C++</span>
+              <span class="skill-tag">Machine Learning</span>
+              <span class="skill-tag">IoT</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">VLSI Basics</span>
+              <span class="skill-tag">Arduino</span>
+              <span class="skill-tag">ESP32</span>
+              <span class="skill-tag">Basic HTML and CSS</span>
+              <span class="skill-tag">Communication Protocols</span>
+              </div>
+      </div>
+  </section>
+  
+  <section id="contact" class="py-20 px-6 text-center">
+    <h2 class="text-4xl font-semibold text-white mb-8">Let’s Connect</h2>
+    <p class="text-slate-400 mb-6">
+        Wanna collab? Got a cool idea? Or just wanna vibe with some tech talk? Feel free to reach out!
+    </p>
+    <p class="text-slate-400 mb-4">
+        Email: <a href="mailto:joshiaditya432@gmail.com" class="text-green-400 hover:underline">joshiaditya432@gmail.com</a>
+    </p>
+    <p class="text-slate-400 mb-6">
+        Phone: <span class="text-green-400">+91 9356666594</span>
+    </p>
+    <a href="mailto:joshiaditya432@gmail.com" class="contact-button">Drop a Ping ✉️</a>
+</section>
+  
+      <footer>
+          © 2025 Aditya Joshi
+      </footer>
+  
+  </body>
+  </html>
